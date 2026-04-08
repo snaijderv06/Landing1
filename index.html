@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion | Business Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#552B35',
+                        secondary: '#FFF0F3',
+                        accent: '#FFDCE4',
+                        dark: '#2D171D',
+                        soft: '#FFF9FA',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-effect { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(85, 43, 53, 0.05); }
+        .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
+        .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+        @keyframes float { 0%, 100% { transform: translateY(0) rotate(-0.5deg); } 50% { transform: translateY(-15px) rotate(0.5deg); } }
+        .float-device { animation: float 5s ease-in-out infinite; }
+        details summary::-webkit-details-marker { display: none; }
+    </style>
+</head>
+<body class="font-sans text-dark bg-white antialiased">
+
+    <header class="fixed w-full glass-effect z-50 h-20 flex items-center">
+        <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="logo.jpg" alt="Logo" class="w-12 h-12 rounded-full border border-primary/10 object-cover">
+                <span class="font-serif text-2xl font-bold tracking-tighter italic">Fashion</span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#beneficios" class="text-[11px] font-bold uppercase tracking-[0.2em] hover:text-primary transition-colors">Funciones</a>
+                <a href="#planes" class="text-[11px] font-bold uppercase tracking-[0.2em] hover:text-primary transition-colors">Planes</a>
+                <a href="#faq" class="text-[11px] font-bold uppercase tracking-[0.2em] hover:text-primary transition-colors">Ayuda</a>
+                <a href="#" class="bg-primary text-white px-6 py-2.5 rounded-full text-[10px] tracking-widest uppercase font-bold transition-transform hover:scale-105 shadow-lg shadow-primary/20">Prueba Gratis</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="relative pt-40 pb-0 overflow-hidden bg-gradient-to-b from-secondary/40 to-white">
+        <div class="max-w-7xl mx-auto px-6 relative text-center">
+            <div class="max-w-4xl mx-auto animate-on-scroll">
+                <span class="inline-block text-primary bg-white border border-accent px-4 py-1.5 rounded-full text-[10px] font-bold mb-6 tracking-[0.2em] uppercase shadow-sm">Gestión Inteligente para Salones</span>
+                <h1 class="text-5xl md:text-7xl font-serif text-dark leading-tight mb-8">Digitaliza tu éxito <br> con <span class="italic text-primary font-light">Fashion</span></h1>
+                <div class="flex justify-center gap-4 mb-20">
+                    <a href="#" class="bg-primary text-white px-10 py-4 rounded-full font-bold text-xs tracking-widest uppercase shadow-xl hover:bg-dark transition-all">Empezar Ahora</a>
+                </div>
+            </div>
+            <div class="relative max-w-5xl mx-auto animate-on-scroll delay-300 float-device">
+                <div class="relative w-[280px] md:w-[320px] mx-auto bg-dark rounded-[3.5rem] p-3 border-[8px] border-dark shadow-2xl">
+                    <div class="relative aspect-[9/19.5] bg-white rounded-[2.8rem] overflow-hidden">
+                        <img src="Servicios.png" alt="App Interface" class="w-full h-full object-cover object-top">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center animate-on-scroll">
+                <div><div class="text-5xl font-serif font-bold text-primary mb-2">+500</div><p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Salones Activos</p></div>
+                <div><div class="text-5xl font-serif font-bold text-primary mb-2">98%</div><p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Lealtad</p></div>
+                <div><div class="text-5xl font-serif font-bold text-primary mb-2">24/7</div><p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Soporte VIP</p></div>
+                <div><div class="text-5xl font-serif font-bold text-primary mb-2">+15k</div><p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Citas Hoy</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="beneficios" class="py-32 bg-soft border-y border-secondary">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="animate-on-scroll">
+                    <h2 class="text-4xl md:text-5xl font-serif text-dark mb-12 italic">Todo bajo <span class="text-primary">tu control.</span></h2>
+                    <div class="space-y-12">
+                        <div class="flex gap-6 group">
+                            <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500"><i data-lucide="calendar"></i></div>
+                            <div><h4 class="font-bold text-xl mb-1 italic">Agenda Inteligente</h4><p class="text-sm text-gray-500 leading-relaxed">Sincronización total para evitar errores y optimizar cada minuto de tu equipo.</p></div>
+                        </div>
+                        <div class="flex gap-6 group">
+                            <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500"><i data-lucide="trending-up"></i></div>
+                            <div><h4 class="font-bold text-xl mb-1 italic">Métricas de Crecimiento</h4><p class="text-sm text-gray-500 leading-relaxed">Dashboard financiero intuitivo para que sepas exactamente cuánto ganas cada día.</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-on-scroll delay-200">
+                    <div class="p-4 bg-white rounded-[3rem] shadow-2xl border border-secondary transition-transform hover:scale-[1.01]">
+                        <img src="Dashboard 2.png" alt="Fashion Dashboard" class="rounded-[2.5rem] w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-16">
+            <div class="text-center animate-on-scroll">
+                <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6 text-primary"><i data-lucide="zap"></i></div>
+                <h4 class="text-lg font-bold mb-2 italic">Eficiencia</h4>
+                <p class="text-sm text-gray-400">Reduce el papeleo y enfócate en lo que amas.</p>
+            </div>
+            <div class="text-center animate-on-scroll delay-100">
+                <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6 text-primary"><i data-lucide="shield-check"></i></div>
+                <h4 class="text-lg font-bold mb-2 italic">Confianza</h4>
+                <p class="text-sm text-gray-400">Tus datos siempre seguros con nosotros.</p>
+            </div>
+            <div class="text-center animate-on-scroll delay-200">
+                <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6 text-primary"><i data-lucide="star"></i></div>
+                <h4 class="text-lg font-bold mb-2 italic">Exclusividad</h4>
+                <p class="text-sm text-gray-400">Una experiencia premium para tus clientes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-white px-6">
+        <div class="max-w-7xl mx-auto bg-dark rounded-[3rem] p-12 md:p-24 text-white relative overflow-hidden animate-on-scroll">
+            <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-primary/20 blur-[100px] rounded-full"></div>
+            <div class="relative z-10 max-w-2xl">
+                <h2 class="text-4xl md:text-5xl font-serif mb-6 leading-tight italic">No caminas sola, <br><span class="text-accent font-light">estamos contigo.</span></h2>
+                <p class="text-gray-400 text-lg mb-10">Acceso directo a webinars, soporte humano y una comunidad activa de profesionales.</p>
+                <button class="flex items-center gap-3 bg-white/10 px-8 py-4 rounded-xl border border-white/10 hover:bg-white/20 transition-all"><i data-lucide="message-circle" class="text-accent"></i> Chat en Vivo</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="planes" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="p-10 rounded-[2.5rem] border border-secondary bg-white animate-on-scroll">
+                <h4 class="text-xl font-bold mb-2 italic">Básico</h4>
+                <div class="text-4xl font-serif font-bold text-primary mb-8">$19<span class="text-sm font-sans text-gray-300">/mes</span></div>
+                <ul class="space-y-4 mb-10 text-gray-500 text-sm">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> 1 Sucursal</li>
+                </ul>
+                <button class="w-full py-4 rounded-full border border-primary text-primary font-bold text-[10px] uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Seleccionar</button>
+            </div>
+            <div class="p-10 rounded-[2.5rem] bg-primary text-white transform md:scale-105 shadow-2xl animate-on-scroll delay-100">
+                <h4 class="text-xl font-bold mb-2 italic">Premium</h4>
+                <div class="text-4xl font-serif font-bold mb-8">$49<span class="text-sm font-sans text-white/40">/mes</span></div>
+                <ul class="space-y-4 mb-10 text-white/70 text-sm">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent"></i> WhatsApp Marketing</li>
+                </ul>
+                <button class="w-full py-4 rounded-full bg-white text-primary font-bold text-[10px] uppercase tracking-widest">Empezar Gratis</button>
+            </div>
+            <div class="p-10 rounded-[2.5rem] border border-secondary bg-white animate-on-scroll delay-200">
+                <h4 class="text-xl font-bold mb-2 italic">Enterprise</h4>
+                <div class="text-4xl font-serif font-bold text-primary mb-8">$99<span class="text-sm font-sans text-gray-300">/mes</span></div>
+                <ul class="space-y-4 mb-10 text-gray-500 text-sm">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> Multi-usuario VIP</li>
+                </ul>
+                <button class="w-full py-4 rounded-full border border-primary text-primary font-bold text-[10px] uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Seleccionar</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24 bg-soft border-t border-secondary">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="animate-on-scroll">
+                    <h2 class="text-4xl font-serif mb-12 italic">Preguntas <span class="text-primary font-light">frecuentes.</span></h2>
+                    <div class="space-y-4">
+                        <details class="group bg-white rounded-2xl p-6 border border-secondary cursor-pointer">
+                            <summary class="flex justify-between items-center font-bold italic">¿Cómo migro mis datos? <i data-lucide="chevron-down" class="group-open:rotate-180 transition-transform"></i></summary>
+                            <p class="mt-4 text-sm text-gray-500">Nosotros lo hacemos por ti sin costo. Solo pásanos tu Excel o base de datos actual.</p>
+                        </details>
+                        <details class="group bg-white rounded-2xl p-6 border border-secondary cursor-pointer">
+                            <summary class="flex justify-between items-center font-bold italic">¿Hay permanencia? <i data-lucide="chevron-down" class="group-open:rotate-180 transition-transform"></i></summary>
+                            <p class="mt-4 text-sm text-gray-500">Ninguna. Puedes cancelar o cambiar de plan cuando quieras desde tu panel.</p>
+                        </details>
+                    </div>
+                </div>
+                <div class="animate-on-scroll delay-200">
+                    <img src="Agenda.png" alt="Fashion Support Team" class="rounded-[2.5rem] shadow-xl border-8 border-white">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white border-t border-secondary/30">
+        <div class="max-w-4xl mx-auto px-6 text-center animate-on-scroll">
+            <h2 class="text-3xl font-serif mb-6 italic">Mantente al tanto de las <span class="text-primary">tendencias.</span></h2>
+            <p class="text-gray-400 mb-10 text-sm">Recibe consejos de gestión y novedades directamente en tu bandeja de entrada.</p>
+            <form class="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="Tu correo electrónico" class="flex-1 px-6 py-4 rounded-full border border-secondary bg-soft focus:outline-none focus:border-primary transition-colors text-sm" required>
+                <button type="submit" class="bg-primary text-white px-8 py-4 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-dark transition-all shadow-lg shadow-primary/20">Suscribirme</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="py-24 bg-soft border-t border-secondary">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-2xl font-serif mb-16 italic text-dark">Mentes detrás del <span class="text-primary">diseño.</span></h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+                <div class="animate-on-scroll">
+                    <div class="relative w-32 h-32 mx-auto mb-6">
+                        <div class="absolute inset-0 bg-accent rounded-full animate-pulse"></div>
+                        <img src="Iris.png" alt="Diseñador" class="relative w-full h-full rounded-full object-cover border-4 border-white shadow-xl z-10">
+                    </div>
+                    <h4 class="font-bold italic text-dark">Iris Ortega</h4>
+                    <p class="text-[10px] uppercase tracking-widest text-primary font-bold mb-2">Diseño UI/UX</p>
+                    <p class="text-xs text-gray-400 leading-relaxed px-8">Enfocado en crear experiencias visuales fluidas y elegantes.</p>
+                </div>
+                <div class="animate-on-scroll delay-100">
+                    <div class="relative w-32 h-32 mx-auto mb-6">
+                        <div class="absolute inset-0 bg-accent rounded-full animate-pulse"></div>
+                        <img src="Snaijder.png" alt="Desarrollador" class="relative w-full h-full rounded-full object-cover border-4 border-white shadow-xl z-10">
+                    </div>
+                    <h4 class="font-bold italic text-dark">Snaijder Vargas</h4>
+                    <p class="text-[10px] uppercase tracking-widest text-primary font-bold mb-2">Desarrollo Frontend</p>
+                    <p class="text-xs text-gray-400 leading-relaxed px-8">Especialista en convertir visiones creativas en código limpio.</p>
+                </div>
+                <div class="animate-on-scroll delay-200">
+                    <div class="relative w-32 h-32 mx-auto mb-6">
+                        <div class="absolute inset-0 bg-accent rounded-full animate-pulse"></div>
+                        <img src="David.png" alt="Estratega" class="relative w-full h-full rounded-full object-cover border-4 border-white shadow-xl z-10">
+                    </div>
+                    <h4 class="font-bold italic text-dark">David Oporta</h4>
+                    <p class="text-[10px] uppercase tracking-widest text-primary font-bold mb-2">Estrategia Visual</p>
+                    <p class="text-xs text-gray-400 leading-relaxed px-8">Encargado de mantener la esencia premium de la marca.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white py-12 border-t border-secondary">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-4">
+                <img src="logo.jpg" alt="Logo" class="w-12 h-12 rounded-full">
+                <span class="font-serif text-2xl font-bold tracking-tighter italic">Fashion</span>
+            </div>
+            <p class="text-[10px] text-gray-400 tracking-[0.4em] uppercase font-bold">© 2026 Marketing & Tech para Salones</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
+    </script>
+</body>
+</html>
