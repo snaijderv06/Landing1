@@ -4,260 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="emd9yycWWV4fOS9O5TRpwirHXZUW_SKOHNpOxBgb4rQ" />
-    <title>Fashion | Business Management</title>
-    <script src="https://t.contentsquare.net/uxa/8393ca9978130.js"></script>
+    <title>Fashion | App para Salones de Belleza</title>
+    <link rel="icon" href="logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#552B35',
-                        secondary: '#FFF0F3',
-                        accent: '#FFDCE4',
-                        dark: '#2D171D',
-                        soft: '#FFF9FA',
-                    }
-                }
-            }
-        }
+        tailwind.config = { theme: { extend: { colors: { primary: '#552B35', secondary: '#FFF0F3', accent: '#FFDCE4', dark: '#2D171D', soft: '#FFF9FA' } } } }
     </script>
     <style>
-        .glass-effect { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(85, 43, 53, 0.05); }
-        .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
-        .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
-        @keyframes float { 0%, 100% { transform: translateY(0) rotate(-0.5deg); } 50% { transform: translateY(-15px) rotate(0.5deg); } }
-        .float-device { animation: float 5s ease-in-out infinite; }
-        details summary::-webkit-details-marker { display: none; }
+        .glass-effect{background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(85,43,53,.08)}
+        .animate-on-scroll{opacity:0;transform:translateY(28px);transition:all .8s ease}.animate-on-scroll.is-visible{opacity:1;transform:translateY(0)}
+        @keyframes float{0%,100%{transform:translateY(0) rotate(-.5deg)}50%{transform:translateY(-14px) rotate(.5deg)}}.float-device{animation:float 5s ease-in-out infinite}
+        details summary::-webkit-details-marker{display:none}
+        .chatbot-box{position:fixed;bottom:24px;right:24px;z-index:80;font-family:inherit}.chatbot-panel{width:340px;max-width:calc(100vw - 32px);height:460px;background:white;border:1px solid rgba(85,43,53,.12);border-radius:28px;box-shadow:0 25px 60px rgba(45,23,29,.20);overflow:hidden;display:none;flex-direction:column}.chatbot-panel.is-open{display:flex}.chatbot-header{background:#552B35;color:white;padding:18px 20px;display:flex;align-items:center;justify-content:space-between}.chatbot-header h3{font-size:15px;font-weight:700;margin:0;font-style:italic}.chatbot-header p{font-size:11px;color:rgba(255,255,255,.75);margin:2px 0 0}.chatbot-close{background:rgba(255,255,255,.12);border:none;color:white;width:32px;height:32px;border-radius:999px;cursor:pointer}.chatbot-messages{flex:1;padding:18px;overflow-y:auto;background:#FFF9FA;display:flex;flex-direction:column;gap:10px}.chatbot-message{max-width:82%;padding:11px 14px;border-radius:18px;font-size:13px;line-height:1.45}.chatbot-message.bot{background:white;color:#2D171D;border-bottom-left-radius:6px;border:1px solid #FFF0F3}.chatbot-message.user{background:#552B35;color:white;align-self:flex-end;border-bottom-right-radius:6px}.chatbot-options{display:flex;flex-wrap:wrap;gap:8px;padding:12px 16px;background:white;border-top:1px solid #FFF0F3}.chatbot-option{border:1px solid #FFDCE4;background:#FFF9FA;color:#552B35;padding:8px 10px;border-radius:999px;font-size:11px;font-weight:700;cursor:pointer}.chatbot-form{display:flex;gap:8px;padding:14px;background:white;border-top:1px solid #FFF0F3}.chatbot-form input{flex:1;border:1px solid #FFDCE4;border-radius:999px;padding:11px 14px;font-size:13px;outline:none}.chatbot-form input:focus{border-color:#552B35}.chatbot-form button,.chatbot-toggle{background:#552B35;color:white;border:none;cursor:pointer}.chatbot-form button{width:44px;height:44px;border-radius:999px;display:flex;align-items:center;justify-content:center}.chatbot-toggle{width:64px;height:64px;border-radius:999px;box-shadow:0 18px 35px rgba(85,43,53,.28);display:flex;align-items:center;justify-content:center;margin-left:auto;transition:transform .25s ease}.chatbot-toggle:hover{transform:scale(1.06)}@media(max-width:640px){.chatbot-box{right:16px;bottom:16px}.chatbot-panel{height:420px}}
     </style>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-88NLD56EEH"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-88NLD56EEH');
-    </script>
 </head>
 <body class="font-sans text-dark bg-white antialiased">
-
-    <header class="fixed w-full glass-effect z-50 h-20 flex items-center">
-        <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <img src="logo.png" alt="Logo" class="w-12 h-12 rounded-full border border-primary/10 object-cover">
-                <span class="font-serif text-2xl font-bold tracking-tighter italic">Fashion</span>
-            </div>
-            <nav class="hidden md:flex items-center space-x-8">
-                <a href="#beneficios" class="text-[11px] font-bold uppercase tracking-[0.2em] hover:text-primary transition-colors">Funciones</a>
-                <a href="#planes" class="text-[11px] font-bold uppercase tracking-[0.2em] hover:text-primary transition-colors">Planes</a>
-                <a href="#faq" class="text-[11px] font-bold uppercase tracking-[0.2em] hover:text-primary transition-colors">Ayuda</a>
-                <a href="#" class="bg-primary text-white px-6 py-2.5 rounded-full text-[10px] tracking-widest uppercase font-bold transition-transform hover:scale-105 shadow-lg shadow-primary/20">Prueba Gratis</a>
-            </nav>
-        </div>
-    </header>
-
-    <section class="relative pt-40 pb-0 overflow-hidden bg-gradient-to-b from-secondary/40 to-white">
-        <div class="max-w-7xl mx-auto px-6 relative text-center">
-            <div class="max-w-4xl mx-auto animate-on-scroll">
-                <span class="inline-block text-primary bg-white border border-accent px-4 py-1.5 rounded-full text-[10px] font-bold mb-6 tracking-[0.2em] uppercase shadow-sm">Gestión Inteligente para Salones</span>
-                <h1 class="text-5xl md:text-7xl font-serif text-dark leading-tight mb-8">Digitaliza tu éxito <br> con <span class="italic text-primary font-light">Fashion</span></h1>
-                <div class="flex justify-center gap-4 mb-20">
-                    <a href="#" class="bg-primary text-white px-10 py-4 rounded-full font-bold text-xs tracking-widest uppercase shadow-xl hover:bg-dark transition-all">Empezar Ahora</a>
-                </div>
-            </div>
-            <div class="relative max-w-5xl mx-auto animate-on-scroll delay-300 float-device">
-                <div class="relative w-[280px] md:w-[320px] mx-auto bg-dark rounded-[3.5rem] p-3 border-[8px] border-dark shadow-2xl">
-                    <div class="relative aspect-[9/19.5] bg-white rounded-[2.8rem] overflow-hidden">
-                        <img src="Servicios.png" alt="App Interface" class="w-full h-full object-cover object-top">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center animate-on-scroll">
-                <div><div class="text-5xl font-serif font-bold text-primary mb-2">+500</div><p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Salones Activos</p></div>
-                <div><div class="text-5xl font-serif font-bold text-primary mb-2">100%</div><p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Lealtad</p></div>
-                <div><div class="text-5xl font-serif font-bold text-primary mb-2">24/7</div><p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Soporte VIP</p></div>
-                <div><div class="text-5xl font-serif font-bold text-primary mb-2">+15k</div><p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Citas Hoy</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="beneficios" class="py-32 bg-soft border-y border-secondary">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                <div class="animate-on-scroll">
-                    <h2 class="text-4xl md:text-5xl font-serif text-dark mb-12 italic">Todo bajo <span class="text-primary">tu control.</span></h2>
-                    <div class="space-y-12">
-                        <div class="flex gap-6 group">
-                            <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500"><i data-lucide="calendar"></i></div>
-                            <div><h4 class="font-bold text-xl mb-1 italic">Agenda Inteligente</h4><p class="text-sm text-gray-500 leading-relaxed">Sincronización total para evitar errores y optimizar cada minuto de tu equipo.</p></div>
-                        </div>
-                        <div class="flex gap-6 group">
-                            <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500"><i data-lucide="trending-up"></i></div>
-                            <div><h4 class="font-bold text-xl mb-1 italic">Métricas de Crecimiento</h4><p class="text-sm text-gray-500 leading-relaxed">Dashboard financiero intuitivo para que sepas exactamente cuánto ganas cada día.</p></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="animate-on-scroll delay-200">
-                    <div class="p-4 bg-white rounded-[3rem] shadow-2xl border border-secondary transition-transform hover:scale-[1.01]">
-                        <img src="Dashboard 2.png" alt="Fashion Dashboard" class="rounded-[2.5rem] w-full h-auto">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-16">
-            <div class="text-center animate-on-scroll">
-                <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6 text-primary"><i data-lucide="zap"></i></div>
-                <h4 class="text-lg font-bold mb-2 italic">Eficiencia</h4>
-                <p class="text-sm text-gray-400">Reduce el papeleo y enfócate en lo que amas.</p>
-            </div>
-            <div class="text-center animate-on-scroll delay-100">
-                <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6 text-primary"><i data-lucide="shield-check"></i></div>
-                <h4 class="text-lg font-bold mb-2 italic">Confianza</h4>
-                <p class="text-sm text-gray-400">Tus datos siempre seguros con nosotros.</p>
-            </div>
-            <div class="text-center animate-on-scroll delay-200">
-                <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6 text-primary"><i data-lucide="star"></i></div>
-                <h4 class="text-lg font-bold mb-2 italic">Exclusividad</h4>
-                <p class="text-sm text-gray-400">Una experiencia premium para tus clientes.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-12 bg-white px-6">
-        <div class="max-w-7xl mx-auto bg-dark rounded-[3rem] p-12 md:p-24 text-white relative overflow-hidden animate-on-scroll">
-            <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-primary/20 blur-[100px] rounded-full"></div>
-            <div class="relative z-10 max-w-2xl">
-                <h2 class="text-4xl md:text-5xl font-serif mb-6 leading-tight italic">No caminas sola, <br><span class="text-accent font-light">estamos contigo.</span></h2>
-                <p class="text-gray-400 text-lg mb-10">Acceso directo a soporte humano y una comunidad activa de profesionales.</p>
-                <button class="flex items-center gap-3 bg-white/10 px-8 py-4 rounded-xl border border-white/10 hover:bg-white/20 transition-all"><i data-lucide="message-circle" class="text-accent"></i> Chat en Vivo</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="planes" class="py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div class="p-10 rounded-[2.5rem] border border-secondary bg-white animate-on-scroll">
-                <h4 class="text-xl font-bold mb-2 italic">Básico</h4>
-                <div class="text-4xl font-serif font-bold text-primary mb-8">$19<span class="text-sm font-sans text-gray-300">/mes</span></div>
-                <ul class="space-y-4 mb-10 text-gray-500 text-sm">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> 1 Sucursal</li>
-                </ul>
-                <button class="w-full py-4 rounded-full border border-primary text-primary font-bold text-[10px] uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Seleccionar</button>
-            </div>
-            <div class="p-10 rounded-[2.5rem] bg-primary text-white transform md:scale-105 shadow-2xl animate-on-scroll delay-100">
-                <h4 class="text-xl font-bold mb-2 italic">Premium</h4>
-                <div class="text-4xl font-serif font-bold mb-8">$49<span class="text-sm font-sans text-white/40">/mes</span></div>
-                <ul class="space-y-4 mb-10 text-white/70 text-sm">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent"></i> WhatsApp Marketing</li>
-                </ul>
-                <button class="w-full py-4 rounded-full bg-white text-primary font-bold text-[10px] uppercase tracking-widest">Empezar Gratis</button>
-            </div>
-            <div class="p-10 rounded-[2.5rem] border border-secondary bg-white animate-on-scroll delay-200">
-                <h4 class="text-xl font-bold mb-2 italic">Enterprise</h4>
-                <div class="text-4xl font-serif font-bold text-primary mb-8">$99<span class="text-sm font-sans text-gray-300">/mes</span></div>
-                <ul class="space-y-4 mb-10 text-gray-500 text-sm">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> Multi-usuario VIP</li>
-                </ul>
-                <button class="w-full py-4 rounded-full border border-primary text-primary font-bold text-[10px] uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Seleccionar</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="py-24 bg-soft border-t border-secondary">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                <div class="animate-on-scroll">
-                    <h2 class="text-4xl font-serif mb-12 italic">Preguntas <span class="text-primary font-light">frecuentes.</span></h2>
-                    <div class="space-y-4">
-                        <details class="group bg-white rounded-2xl p-6 border border-secondary cursor-pointer">
-                            <summary class="flex justify-between items-center font-bold italic">¿Cómo migro mis datos? <i data-lucide="chevron-down" class="group-open:rotate-180 transition-transform"></i></summary>
-                            <p class="mt-4 text-sm text-gray-500">Nosotros lo hacemos por ti sin costo. Solo pásanos tu Excel o base de datos actual.</p>
-                        </details>
-                        <details class="group bg-white rounded-2xl p-6 border border-secondary cursor-pointer">
-                            <summary class="flex justify-between items-center font-bold italic">¿Hay permanencia? <i data-lucide="chevron-down" class="group-open:rotate-180 transition-transform"></i></summary>
-                            <p class="mt-4 text-sm text-gray-500">Ninguna. Puedes cancelar o cambiar de plan cuando quieras desde tu panel.</p>
-                        </details>
-                    </div>
-                </div>
-                <div class="animate-on-scroll delay-200">
-                    <img src="Agenda.png" alt="Fashion Support Team" class="rounded-[2.5rem] shadow-xl border-8 border-white">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 bg-white border-t border-secondary/30">
-        <div class="max-w-4xl mx-auto px-6 text-center animate-on-scroll">
-            <h2 class="text-3xl font-serif mb-6 italic">Mantente al tanto de las <span class="text-primary">tendencias.</span></h2>
-            <p class="text-gray-400 mb-10 text-sm">Recibe consejos de gestión y novedades directamente en tu bandeja de entrada.</p>
-            <form class="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
-                <input type="email" placeholder="Tu correo electrónico" class="flex-1 px-6 py-4 rounded-full border border-secondary bg-soft focus:outline-none focus:border-primary transition-colors text-sm" required>
-                <button type="submit" class="bg-primary text-white px-8 py-4 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-dark transition-all shadow-lg shadow-primary/20">Suscribirme</button>
-            </form>
-        </div>
-    </section>
-
-    <section class="py-24 bg-soft border-t border-secondary">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-2xl font-serif mb-16 italic text-dark">Mentes detrás del <span class="text-primary">diseño.</span></h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-                <div class="animate-on-scroll">
-                    <div class="relative w-32 h-32 mx-auto mb-6">
-                        <div class="absolute inset-0 bg-accent rounded-full animate-pulse"></div>
-                        <img src="Iris.png" alt="Diseñador" class="relative w-full h-full rounded-full object-cover border-4 border-white shadow-xl z-10">
-                    </div>
-                    <h4 class="font-bold italic text-dark">Iris Ortega</h4>
-                    <p class="text-[10px] uppercase tracking-widest text-primary font-bold mb-2">Diseño UI/UX</p>
-                    <p class="text-xs text-gray-400 leading-relaxed px-8">Enfocado en crear experiencias visuales fluidas y elegantes.</p>
-                </div>
-                <div class="animate-on-scroll delay-100">
-                    <div class="relative w-32 h-32 mx-auto mb-6">
-                        <div class="absolute inset-0 bg-accent rounded-full animate-pulse"></div>
-                        <img src="Snaijder.png" alt="Desarrollador" class="relative w-full h-full rounded-full object-cover border-4 border-white shadow-xl z-10">
-                    </div>
-                    <h4 class="font-bold italic text-dark">Snaijder Vargas</h4>
-                    <p class="text-[10px] uppercase tracking-widest text-primary font-bold mb-2">Desarrollo Frontend</p>
-                    <p class="text-xs text-gray-400 leading-relaxed px-8">Especialista en convertir visiones creativas en código limpio.</p>
-                </div>
-                <div class="animate-on-scroll delay-200">
-                    <div class="relative w-32 h-32 mx-auto mb-6">
-                        <div class="absolute inset-0 bg-accent rounded-full animate-pulse"></div>
-                        <img src="David.png" alt="Estratega" class="relative w-full h-full rounded-full object-cover border-4 border-white shadow-xl z-10">
-                    </div>
-                    <h4 class="font-bold italic text-dark">David Oporta</h4>
-                    <p class="text-[10px] uppercase tracking-widest text-primary font-bold mb-2">Estrategia Visual</p>
-                    <p class="text-xs text-gray-400 leading-relaxed px-8">Encargado de mantener la esencia premium de la marca.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-white py-12 border-t border-secondary">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="flex items-center gap-4">
-                <img src="logo.png" alt="Logo" class="w-12 h-12 rounded-full">
-                <span class="font-serif text-2xl font-bold tracking-tighter italic">Fashion</span>
-            </div>
-            <p class="text-[10px] text-gray-400 tracking-[0.4em] uppercase font-bold">© 2026 Marketing & Tech para Salones</p>
-        </div>
-    </footer>
-
-    <script>
-        lucide.createIcons();
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
-    </script>
+<header class="fixed w-full glass-effect z-50 h-20 flex items-center"><div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center"><a href="#inicio" class="flex items-center gap-3"><img src="logo.png" alt="Logo Fashion" class="w-12 h-12 rounded-full border border-primary/10 object-cover"><span class="font-serif text-2xl font-bold tracking-tighter italic">Fashion</span></a><nav class="hidden md:flex items-center space-x-8"><a href="#problema" class="text-[11px] font-bold uppercase tracking-[0.2em] hover:text-primary transition-colors">El Problema</a><a href="#beneficios" class="text-[11px] font-bold uppercase tracking-[0.2em] hover:text-primary transition-colors">Beneficios</a><a href="#faq" class="text-[11px] font-bold uppercase tracking-[0.2em] hover:text-primary transition-colors">FAQ</a><a href="#beta" class="bg-primary text-white px-6 py-2.5 rounded-full text-[10px] tracking-widest uppercase font-bold transition-transform hover:scale-105 shadow-lg shadow-primary/20">Únanse a la Beta</a></nav></div></header>
+<main id="inicio">
+<section class="relative pt-36 pb-20 overflow-hidden bg-gradient-to-b from-secondary/50 to-white"><div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center"><div class="animate-on-scroll"><span class="inline-block text-primary bg-white border border-accent px-4 py-1.5 rounded-full text-[10px] font-bold mb-6 tracking-[0.2em] uppercase shadow-sm">App de gestión para salones de belleza</span><h1 class="text-5xl md:text-7xl font-serif text-dark leading-tight mb-6">Organiza tu salón, agenda tus citas y vende más con <span class="italic text-primary font-light">Fashion</span></h1><p class="text-lg text-gray-500 leading-relaxed mb-8 max-w-xl">Fashion ayuda a salones de belleza a controlar citas, clientes, servicios, horarios y crecimiento desde una sola plataforma sencilla.</p><div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center"><a href="#beta" class="bg-primary text-white px-10 py-4 rounded-full font-bold text-xs tracking-widest uppercase shadow-xl hover:bg-dark transition-all">Solicitar Acceso</a><span class="text-xs text-gray-400 font-bold uppercase tracking-widest">Sin instalación complicada</span></div></div><div class="relative animate-on-scroll delay-200 float-device"><div class="relative w-[280px] md:w-[330px] mx-auto bg-dark rounded-[3.5rem] p-3 border-[8px] border-dark shadow-2xl"><div class="relative aspect-[9/19.5] bg-white rounded-[2.8rem] overflow-hidden"><img src="Servicios.png" alt="Pantalla principal de Fashion" class="w-full h-full object-cover object-top"></div></div></div></div></section>
+<section id="problema" class="py-28 bg-white"><div class="max-w-7xl mx-auto px-6"><div class="max-w-3xl mx-auto text-center animate-on-scroll mb-16"><h2 class="text-4xl md:text-5xl font-serif italic mb-6">El problema que viven muchos salones</h2><p class="text-gray-500">Cuando todo se maneja en cuadernos, WhatsApp o memoria, aparecen errores que cuestan tiempo, dinero y clientes.</p></div><div class="grid md:grid-cols-3 gap-8"><div class="p-8 rounded-[2rem] bg-soft border border-secondary animate-on-scroll"><i data-lucide="calendar-x" class="text-primary w-10 h-10 mb-6"></i><h3 class="font-bold text-xl italic mb-3">Citas desordenadas</h3><p class="text-sm text-gray-500 leading-relaxed">Se cruzan horarios, se olvidan reservas y el equipo pierde control del día.</p></div><div class="p-8 rounded-[2rem] bg-soft border border-secondary animate-on-scroll delay-100"><i data-lucide="users" class="text-primary w-10 h-10 mb-6"></i><h3 class="font-bold text-xl italic mb-3">Clientes sin seguimiento</h3><p class="text-sm text-gray-500 leading-relaxed">No sabes quién volvió, quién falta por atender o a quién enviar promociones.</p></div><div class="p-8 rounded-[2rem] bg-soft border border-secondary animate-on-scroll delay-200"><i data-lucide="bar-chart-3" class="text-primary w-10 h-10 mb-6"></i><h3 class="font-bold text-xl italic mb-3">Poca claridad del negocio</h3><p class="text-sm text-gray-500 leading-relaxed">Al final del día cuesta saber cuánto se vendió y qué servicios generan más ingresos.</p></div></div></div></section>
+<section id="beneficios" class="py-28 bg-soft border-y border-secondary"><div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center"><div class="animate-on-scroll"><span class="text-[10px] uppercase tracking-[0.25em] text-primary font-bold">La solución</span><h2 class="text-4xl md:text-5xl font-serif italic my-5">Fashion convierte el caos del salón en una experiencia organizada.</h2><p class="text-gray-500 mb-8 leading-relaxed">No se trata solo de tener una app bonita. Se trata de que el salón trabaje con más orden, menos errores y mejor atención al cliente.</p><ul class="space-y-4 text-sm text-gray-600"><li class="flex gap-3"><i data-lucide="check-circle" class="text-primary w-5 h-5"></i> Agenda inteligente para controlar citas y horarios.</li><li class="flex gap-3"><i data-lucide="check-circle" class="text-primary w-5 h-5"></i> Registro de clientes, servicios y preferencias.</li><li class="flex gap-3"><i data-lucide="check-circle" class="text-primary w-5 h-5"></i> Dashboard para visualizar ventas y crecimiento.</li></ul></div><div class="animate-on-scroll delay-200"><div class="p-4 bg-white rounded-[3rem] shadow-2xl border border-secondary"><img src="Dashboard 2.png" alt="Dashboard de Fashion" class="rounded-[2.5rem] w-full h-auto"></div></div></div></section>
+<section class="py-28 bg-white"><div class="max-w-7xl mx-auto px-6"><div class="max-w-3xl mx-auto text-center mb-16 animate-on-scroll"><h2 class="text-4xl font-serif italic mb-4">Empezar es facilísimo</h2><p class="text-gray-500">En pocos pasos tu salón puede pasar del desorden manual a una gestión digital.</p></div><div class="grid md:grid-cols-3 gap-8"><div class="text-center p-8 animate-on-scroll"><div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-6 text-2xl font-serif">1</div><h3 class="font-bold text-xl italic mb-3">Crea tu cuenta</h3><p class="text-sm text-gray-500">Registra el nombre de tu salón y los datos principales.</p></div><div class="text-center p-8 animate-on-scroll delay-100"><div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-6 text-2xl font-serif">2</div><h3 class="font-bold text-xl italic mb-3">Configura servicios</h3><p class="text-sm text-gray-500">Agrega servicios, precios, horarios y colaboradores.</p></div><div class="text-center p-8 animate-on-scroll delay-200"><div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-6 text-2xl font-serif">3</div><h3 class="font-bold text-xl italic mb-3">Gestiona y crece</h3><p class="text-sm text-gray-500">Controla tus citas, atiende mejor y toma decisiones con datos.</p></div></div></div></section>
+<section class="py-24 bg-dark text-white"><div class="max-w-5xl mx-auto px-6 text-center animate-on-scroll"><i data-lucide="quote" class="w-12 h-12 text-accent mx-auto mb-8"></i><p class="text-2xl md:text-3xl font-serif italic leading-relaxed mb-8">“Antes anotábamos todo en una libreta. Con Fashion puedo ver mis citas, clientes y servicios desde un solo lugar.”</p><h4 class="font-bold">María Fernanda</h4><p class="text-sm text-white/50">Administradora de salón beta</p></div></section>
+<section class="py-28 bg-white"><div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10"><div class="p-10 rounded-[2.5rem] bg-soft border border-secondary animate-on-scroll"><h3 class="text-2xl font-serif italic mb-6 text-primary">Perfecto para...</h3><ul class="space-y-4 text-sm text-gray-600"><li>• Salones de belleza que manejan muchas citas al día.</li><li>• Barberías, spas o estudios que necesitan orden.</li><li>• Negocios que quieren conocer mejor a sus clientes.</li></ul></div><div class="p-10 rounded-[2.5rem] bg-white border border-secondary animate-on-scroll delay-100"><h3 class="text-2xl font-serif italic mb-6 text-primary">No es para...</h3><ul class="space-y-4 text-sm text-gray-600"><li>• Negocios que no quieren digitalizar sus procesos.</li><li>• Salones que no registran citas ni clientes.</li><li>• Personas que buscan solo una red social o catálogo.</li></ul></div></div></section>
+<section id="faq" class="py-28 bg-soft border-y border-secondary"><div class="max-w-4xl mx-auto px-6"><div class="text-center mb-12 animate-on-scroll"><h2 class="text-4xl font-serif italic">Preguntas frecuentes</h2></div><div class="space-y-4 animate-on-scroll"><details class="group bg-white rounded-2xl p-6 border border-secondary cursor-pointer"><summary class="flex justify-between items-center font-bold italic">¿Fashion sirve para salones pequeños? <i data-lucide="chevron-down" class="group-open:rotate-180 transition-transform"></i></summary><p class="mt-4 text-sm text-gray-500">Sí. Puedes iniciar con funciones básicas como agenda, clientes y servicios, y luego crecer.</p></details><details class="group bg-white rounded-2xl p-6 border border-secondary cursor-pointer"><summary class="flex justify-between items-center font-bold italic">¿Puedo migrar datos desde Excel? <i data-lucide="chevron-down" class="group-open:rotate-180 transition-transform"></i></summary><p class="mt-4 text-sm text-gray-500">Sí. La idea es que puedas pasar tus clientes y servicios sin empezar desde cero.</p></details><details class="group bg-white rounded-2xl p-6 border border-secondary cursor-pointer"><summary class="flex justify-between items-center font-bold italic">¿Tiene soporte? <i data-lucide="chevron-down" class="group-open:rotate-180 transition-transform"></i></summary><p class="mt-4 text-sm text-gray-500">Sí. Además del soporte humano, esta landing incluye un chatbot de ayuda para resolver dudas rápidas.</p></details></div></div></section>
+<section class="py-28 bg-white"><div class="max-w-7xl mx-auto px-6 text-center"><h2 class="text-3xl font-serif mb-16 italic text-dark animate-on-scroll">El equipo fundador</h2><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12"><div class="animate-on-scroll"><img src="Iris.png" alt="Iris Ortega" class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-secondary shadow-xl mb-6"><h4 class="font-bold italic">Iris Ortega</h4><p class="text-[10px] uppercase tracking-widest text-primary font-bold mb-2">Diseño UI/UX</p><p class="text-xs text-gray-400 px-8">Diseñando una experiencia elegante y fácil de usar.</p></div><div class="animate-on-scroll delay-100"><img src="Snaijder.png" alt="Snaijder Vargas" class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-secondary shadow-xl mb-6"><h4 class="font-bold italic">Snaijder Vargas</h4><p class="text-[10px] uppercase tracking-widest text-primary font-bold mb-2">Desarrollo Frontend</p><p class="text-xs text-gray-400 px-8">Construyendo interfaces limpias y funcionales.</p></div><div class="animate-on-scroll delay-200"><img src="David.png" alt="David Oporta" class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-secondary shadow-xl mb-6"><h4 class="font-bold italic">David Oporta</h4><p class="text-[10px] uppercase tracking-widest text-primary font-bold mb-2">Estrategia Visual</p><p class="text-xs text-gray-400 px-8">Cuidando la esencia premium de la marca.</p></div></div></div></section>
+<section id="beta" class="py-28 bg-primary text-white"><div class="max-w-4xl mx-auto px-6 text-center animate-on-scroll"><h2 class="text-4xl md:text-5xl font-serif italic mb-6">Dale a tu salón el orden que merece.</h2><p class="text-white/70 mb-10">Solicita acceso a la beta de Fashion y empieza a organizar citas, clientes y servicios desde una sola app.</p><form class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto"><input type="email" placeholder="Tu correo electrónico" class="flex-1 px-6 py-4 rounded-full text-dark focus:outline-none" required><button type="submit" class="bg-white text-primary px-8 py-4 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-accent transition-all">Solicitar acceso</button></form><p class="text-xs text-white/50 mt-5">Cero spam. Puedes darte de baja cuando quieras.</p></div></section>
+</main>
+<div class="chatbot-box" aria-live="polite"><div class="chatbot-panel" id="chatbotPanel"><div class="chatbot-header"><div><h3>Asistente Fashion</h3><p>Responde dudas sobre la app</p></div><button class="chatbot-close" id="chatbotClose" aria-label="Cerrar chat"><i data-lucide="x" class="w-4 h-4"></i></button></div><div class="chatbot-messages" id="chatbotMessages"><div class="chatbot-message bot">¡Hola! Soy el asistente virtual de Fashion. ¿En qué puedo ayudarte?</div></div><div class="chatbot-options"><button class="chatbot-option" data-question="planes">Planes</button><button class="chatbot-option" data-question="agenda">Agenda</button><button class="chatbot-option" data-question="soporte">Soporte</button><button class="chatbot-option" data-question="datos">Migrar datos</button></div><form class="chatbot-form" id="chatbotForm"><input type="text" id="chatbotInput" placeholder="Escribe tu pregunta..." autocomplete="off"><button type="submit" aria-label="Enviar mensaje"><i data-lucide="send" class="w-4 h-4"></i></button></form></div><button class="chatbot-toggle" id="chatbotToggle" aria-label="Abrir chat"><i data-lucide="message-circle" class="w-7 h-7"></i></button></div>
+<footer class="bg-white py-12 border-t border-secondary"><div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8"><div class="flex items-center gap-4"><img src="logo.png" alt="Logo" class="w-12 h-12 rounded-full"><span class="font-serif text-2xl font-bold tracking-tighter italic">Fashion</span></div><p class="text-[10px] text-gray-400 tracking-[0.4em] uppercase font-bold">© 2026 Fashion | App para Salones de Belleza</p></div></footer>
+<script>
+lucide.createIcons();const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('is-visible')})},{threshold:.1});document.querySelectorAll('.animate-on-scroll').forEach((el)=>observer.observe(el));
+const chatbotPanel=document.getElementById('chatbotPanel'),chatbotToggle=document.getElementById('chatbotToggle'),chatbotClose=document.getElementById('chatbotClose'),chatbotForm=document.getElementById('chatbotForm'),chatbotInput=document.getElementById('chatbotInput'),chatbotMessages=document.getElementById('chatbotMessages');
+const respuestasChatbot={planes:'Fashion tendrá planes según el tamaño del salón. Puedes iniciar con funciones básicas y luego ampliar herramientas como marketing por WhatsApp y reportes.',agenda:'La agenda inteligente ayuda a organizar citas, evitar cruces de horario y controlar mejor el tiempo de cada colaborador.',soporte:'Fashion ofrece soporte para configuración, dudas del sistema y acompañamiento durante la beta.',datos:'Puedes migrar clientes, servicios y precios desde Excel para no empezar desde cero.',precio:'Durante la beta puedes solicitar acceso y validar el sistema. Los precios finales pueden variar según el plan.',whatsapp:'Fashion puede ayudarte a enviar recordatorios, promociones y seguimiento a clientes mediante estrategias de WhatsApp Marketing.',citas:'Con Fashion puedes administrar citas, clientes, servicios, horarios y ventas desde un solo lugar.',default:'Puedo ayudarte con agenda, clientes, servicios, soporte, migración de datos, precios y acceso a la beta de Fashion.'};
+function agregarMensaje(texto,tipo){const mensaje=document.createElement('div');mensaje.className=`chatbot-message ${tipo}`;mensaje.textContent=texto;chatbotMessages.appendChild(mensaje);chatbotMessages.scrollTop=chatbotMessages.scrollHeight}function obtenerRespuesta(texto){const pregunta=texto.toLowerCase();if(pregunta.includes('plan')||pregunta.includes('paquete'))return respuestasChatbot.planes;if(pregunta.includes('agenda')||pregunta.includes('cita')||pregunta.includes('horario'))return respuestasChatbot.agenda;if(pregunta.includes('soporte')||pregunta.includes('ayuda'))return respuestasChatbot.soporte;if(pregunta.includes('migr')||pregunta.includes('excel')||pregunta.includes('datos'))return respuestasChatbot.datos;if(pregunta.includes('precio')||pregunta.includes('costo')||pregunta.includes('cuánto'))return respuestasChatbot.precio;if(pregunta.includes('whatsapp'))return respuestasChatbot.whatsapp;if(pregunta.includes('cliente')||pregunta.includes('servicio'))return respuestasChatbot.citas;return respuestasChatbot.default}
+chatbotToggle.addEventListener('click',()=>chatbotPanel.classList.toggle('is-open'));chatbotClose.addEventListener('click',()=>chatbotPanel.classList.remove('is-open'));document.querySelectorAll('.chatbot-option').forEach((boton)=>{boton.addEventListener('click',()=>{const pregunta=boton.textContent,clave=boton.dataset.question;agregarMensaje(pregunta,'user');setTimeout(()=>agregarMensaje(respuestasChatbot[clave],'bot'),350)})});chatbotForm.addEventListener('submit',(event)=>{event.preventDefault();const pregunta=chatbotInput.value.trim();if(!pregunta)return;agregarMensaje(pregunta,'user');chatbotInput.value='';setTimeout(()=>agregarMensaje(obtenerRespuesta(pregunta),'bot'),450)});
+</script>
 </body>
 </html>
