@@ -679,25 +679,6 @@
     });
   </script>
 
-  <script>
-    document.getElementById('form-beta').addEventListener('submit', function(e){
-      e.preventDefault();
 
-      const emailInput = document.getElementById('emailInput');
-      const email = emailInput.value.trim();
-
-      if (!email) {
-        alert("Ingresa un correo válido");
-        return;
-      }
-
-      ml('send', 'subscribe', {
-        email: email
-      });
-
-      document.getElementById('mensajeExito').classList.remove('hidden');
-      emailInput.value = "";
-    });
-    </script>
 </body>
 </html>
