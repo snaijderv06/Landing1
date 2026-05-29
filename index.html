@@ -101,6 +101,56 @@
       display: none;
     }
 
+
+    /* Simulador de gestión del salón */
+    .slider-fashion {
+      width: 100%;
+      appearance: none;
+      height: 10px;
+      border-radius: 999px;
+      background: #FFDCE4;
+      outline: none;
+    }
+
+    .slider-fashion::-webkit-slider-thumb {
+      appearance: none;
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: #552B35;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(85, 43, 53, 0.35);
+      transition: transform 0.2s ease;
+    }
+
+    .slider-fashion::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    .slider-fashion::-moz-range-thumb {
+      width: 26px;
+      height: 26px;
+      border: none;
+      border-radius: 999px;
+      background: #552B35;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(85, 43, 53, 0.35);
+      transition: transform 0.2s ease;
+    }
+
+    .slider-fashion::-moz-range-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    .impact-pulse {
+      animation: pulseImpact 1.8s ease-in-out infinite;
+    }
+
+    @keyframes pulseImpact {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
+
     /* Chatbot */
     .chatbot-box {
       position: fixed;
@@ -292,6 +342,7 @@
       <nav class="hidden md:flex items-center space-x-8">
         <a href="#problema" class="text-[11px] font-bold uppercase tracking-[0.2em] hover:text-primary transition-colors">El Problema</a>
         <a href="#beneficios" class="text-[11px] font-bold uppercase tracking-[0.2em] hover:text-primary transition-colors">Beneficios</a>
+        <a href="#simulador" class="text-[11px] font-bold uppercase tracking-[0.2em] hover:text-primary transition-colors">Simulador</a>
         <a href="#faq" class="text-[11px] font-bold uppercase tracking-[0.2em] hover:text-primary transition-colors">FAQ</a>
         <a href="#beta" class="bg-primary text-white px-6 py-2.5 rounded-full text-[10px] tracking-widest uppercase font-bold transition-transform hover:scale-105 shadow-lg shadow-primary/20">Únanse a la Beta</a>
       </nav>
@@ -516,6 +567,107 @@
       </div>
     </section>
 
+
+    <!-- =========================
+         SIMULADOR
+    ========================== -->
+    <section id="simulador" class="py-28 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center mb-14 animate-on-scroll">
+          <span class="text-[10px] uppercase tracking-[0.25em] text-primary font-bold">Simulador</span>
+          <h2 class="text-4xl md:text-5xl font-serif italic my-5">Calculadora de tiempo perdido en la gestión del salón</h2>
+          <p class="text-gray-500">
+            Ajusta los valores y descubre cuánto tiempo se puede perder cada mes cuando las citas, clientes, servicios e insumos se controlan manualmente.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div class="p-8 md:p-10 rounded-[2.5rem] bg-soft border border-secondary shadow-xl animate-on-scroll">
+            <div class="mb-8">
+              <div class="flex justify-between gap-4 mb-3">
+                <label for="citasSemana" class="font-bold text-sm">¿Cuántas citas atiende tu salón por semana?</label>
+                <span id="valorCitas" class="font-bold text-primary whitespace-nowrap">25</span>
+              </div>
+              <input id="citasSemana" type="range" min="5" max="120" value="25" class="slider-fashion" />
+              <div class="flex justify-between text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-2">
+                <span>5</span>
+                <span>120</span>
+              </div>
+            </div>
+
+            <div class="mb-8">
+              <div class="flex justify-between gap-4 mb-3">
+                <label for="tareasSemana" class="font-bold text-sm">¿Cuántos servicios, clientes o insumos actualizas por semana?</label>
+                <span id="valorTareas" class="font-bold text-primary whitespace-nowrap">15</span>
+              </div>
+              <input id="tareasSemana" type="range" min="1" max="80" value="15" class="slider-fashion" />
+              <div class="flex justify-between text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-2">
+                <span>1</span>
+                <span>80</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between gap-4 mb-3">
+                <label for="tiempoManual" class="font-bold text-sm">¿Cuántos minutos pierdes por cita entre agendar, confirmar y registrar?</label>
+                <span id="valorTiempo" class="font-bold text-primary whitespace-nowrap">8 min</span>
+              </div>
+              <input id="tiempoManual" type="range" min="3" max="25" value="8" class="slider-fashion" />
+              <div class="flex justify-between text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-2">
+                <span>3 min</span>
+                <span>25 min</span>
+              </div>
+            </div>
+
+            <p class="mt-8 text-xs text-gray-400 leading-relaxed">
+              El cálculo estima el tiempo perdido en tareas repetitivas: agenda de citas, seguimiento de clientes, actualización de servicios e insumos.
+            </p>
+          </div>
+
+          <div class="p-8 md:p-10 rounded-[2.5rem] bg-dark text-white shadow-2xl animate-on-scroll delay-100">
+            <p class="text-xs uppercase tracking-[0.25em] text-white/50 font-bold mb-4">Resultado estimado</p>
+
+            <div class="impact-pulse">
+              <p class="text-white/60 text-sm mb-2">Tu salón puede estar perdiendo</p>
+              <h3 class="text-5xl md:text-7xl font-serif italic leading-none mb-3 text-orange-400">
+                <span id="diasAnuales">9</span> días
+              </h3>
+              <p class="text-xl md:text-2xl font-serif italic mb-6">al año en gestión manual.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4 mb-7">
+              <div class="rounded-2xl bg-white/10 p-5">
+                <p class="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-2">Tiempo perdido al mes</p>
+                <p id="minutosMensuales" class="text-2xl font-bold">920 min</p>
+              </div>
+              <div class="rounded-2xl bg-white/10 p-5">
+                <p class="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-2">Horas perdidas al mes</p>
+                <p id="horasMensuales" class="text-2xl font-bold">15.3 h</p>
+              </div>
+            </div>
+
+            <div class="mb-8">
+              <div class="flex justify-between text-xs text-white/50 mb-2">
+                <span>Nivel de pérdida operativa</span>
+                <span id="nivelImpacto">Alto</span>
+              </div>
+              <div class="w-full h-4 bg-white/10 rounded-full overflow-hidden">
+                <div id="barraImpacto" class="h-full bg-orange-500 rounded-full transition-all duration-500" style="width: 45%;"></div>
+              </div>
+            </div>
+
+            <div class="bg-white text-dark rounded-[2rem] p-6">
+              <h4 class="text-2xl font-serif italic mb-3 text-primary">Recupera tu tiempo.</h4>
+              <p class="text-sm text-gray-500 mb-5">Automatiza citas, clientes, servicios e insumos desde una sola plataforma.</p>
+              <a href="#beta" class="inline-block w-full text-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-full font-bold text-xs tracking-widest uppercase transition-all hover:scale-105 shadow-lg">
+                Prueba Fashion Gratis
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- =========================
          CAPTURA DE LEADS / BETA
     ========================== -->
@@ -604,6 +756,70 @@
     document.querySelectorAll('.animate-on-scroll').forEach((elemento) => {
       observer.observe(elemento);
     });
+  </script>
+
+
+  <!-- =========================
+       SCRIPT DEL SIMULADOR
+  ========================== -->
+  <script>
+    const citasInput = document.getElementById("citasSemana");
+    const tareasInput = document.getElementById("tareasSemana");
+    const tiempoInput = document.getElementById("tiempoManual");
+
+    const valorCitas = document.getElementById("valorCitas");
+    const valorTareas = document.getElementById("valorTareas");
+    const valorTiempo = document.getElementById("valorTiempo");
+
+    const minutosMensuales = document.getElementById("minutosMensuales");
+    const horasMensuales = document.getElementById("horasMensuales");
+    const diasAnuales = document.getElementById("diasAnuales");
+    const barraImpacto = document.getElementById("barraImpacto");
+    const nivelImpacto = document.getElementById("nivelImpacto");
+
+    function formatearNumero(valor) {
+      return new Intl.NumberFormat("es-NI").format(valor);
+    }
+
+    function actualizarSimuladorSalon() {
+      const citasSemana = Number(citasInput.value);
+      const tareasSemana = Number(tareasInput.value);
+      const tiempoManual = Number(tiempoInput.value);
+
+      valorCitas.textContent = citasSemana;
+      valorTareas.textContent = tareasSemana;
+      valorTiempo.textContent = `${tiempoManual} min`;
+
+      // Tiempo semanal estimado:
+      // 1) tiempo repetitivo por cada cita: agendar, confirmar, registrar y dar seguimiento.
+      // 2) tiempo operativo adicional por actualizar clientes, servicios, categorías o insumos.
+      const minutosPorTareaOperativa = 4;
+      const minutosSemana = (citasSemana * tiempoManual) + (tareasSemana * minutosPorTareaOperativa);
+      const minutosMes = minutosSemana * 4;
+      const horasMes = minutosMes / 60;
+      const diasAnio = (horasMes * 12) / 8;
+
+      minutosMensuales.textContent = `${formatearNumero(Math.round(minutosMes))} min`;
+      horasMensuales.textContent = `${horasMes.toFixed(1)} h`;
+      diasAnuales.textContent = Math.round(diasAnio);
+
+      const porcentaje = Math.min((diasAnio / 60) * 100, 100);
+      barraImpacto.style.width = `${porcentaje}%`;
+
+      if (diasAnio < 10) {
+        nivelImpacto.textContent = "Moderado";
+      } else if (diasAnio < 30) {
+        nivelImpacto.textContent = "Alto";
+      } else {
+        nivelImpacto.textContent = "Crítico";
+      }
+    }
+
+    [citasInput, tareasInput, tiempoInput].forEach((input) => {
+      input.addEventListener("input", actualizarSimuladorSalon);
+    });
+
+    actualizarSimuladorSalon();
   </script>
 
   <!-- =========================
